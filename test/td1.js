@@ -14,7 +14,8 @@ var t1e = {
   documentType: 'I',
   documentSubType: null,
   issuer: 'UTO',
-  optionalData: ['<<<<<<<<<<<<<<<', '<<<<<<<<<<<'],
+  optionalData1: '<<<<<<<<<<<<<<<',
+  optionalData2: '<<<<<<<<<<<',
   documentNumber: 'D23145890',
   sex: 'F',
   birthday: {day: '12', month: '08', year: '74'},
@@ -74,7 +75,8 @@ describe('TD1 Cards', function() {
 
   it('should parse optional', function() {
     var td1 = mrtd.parse(t1)
-    assert.deepEqual(td1.optionalData, t1e.optionalData)
+    assert.deepEqual(td1.optionalData1, t1e.optionalData1)
+    assert.deepEqual(td1.optionalData2, t1e.optionalData2)
   })
 
 
