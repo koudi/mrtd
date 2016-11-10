@@ -5,8 +5,8 @@ var t1 =  "I<UTOD231458907<<<<<<<<<<<<<<<\n"
     t1 += "7408122F1204159UTO<<<<<<<<<<<6\n"
     t1 += "ERIKSSON<<ANNA<MARIA<<<<<<<<<<"
 
-var t2 =  "I<UTOD231458907<<<<<<<<<<<<<<<\n"
-    t2 += "7408122F1204159UTO<<<<<<<<<<<6\n"
+var t2 =  "I<UTOD23145890<887<<<<<<<<<<<<\n"
+    t2 += "7408122F1204159UTO<<<<<<<<<<<8\n"
     t2 += "ERIKSSON<<ANNA<MARIA<<<<<<<<<<"
 
 var t1e = {
@@ -47,6 +47,12 @@ describe('TD1 Cards', function() {
     var td1 = mrtd.parse(t1)
     assert.equal(td1.documentNumber, t1e.documentNumber)
   })
+
+  it('should parse long document number', function() {
+    var td2 = mrtd.parse(t2)
+    assert.equal(td2.documentNumber, t1e.documentNumber + 88)
+  })
+
 
   it('should parse sex', function() {
     var td1 = mrtd.parse(t1)
