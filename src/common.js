@@ -106,7 +106,6 @@ function documentNumber(opt) {
     var value = value.substr(0, value.length - 1)
 
     if (numberCheck == FILLER) {
-      console.log('moo')
       var end = optional.indexOf(FILLER)
       numberCheck = optional[end - 1]
       value += optional.substr(0, end - 1)
