@@ -2,9 +2,11 @@
 
 var common = require('./common')
 var td1Parser = require('./td1')
+var td2Parser = require('./td2')
 
 var parsers = {
   td1: td1Parser,
+  td2: td2Parser,
 }
 
 function simpleValidate(data) {
@@ -34,6 +36,9 @@ function getType(data) {
 
   if (lineCount == 3 && len == 30) {
     return 'td1'
+  }
+  else if (lineCount == 2 && len == 36) {
+    return 'td2'
   }
   else {
     throw 'Unable to detect document type'
