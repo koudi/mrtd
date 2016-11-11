@@ -13,12 +13,16 @@ function personal(val) {
   return common.replaceFiller(val, '')
 }
 
+function documentNumber(value) {
+  return common.replaceFiller(value, ' ').trim()
+}
+
 var def = {
   documentType: [0, 0, 1, passportType],
   documentSubType: [0, 1, 1, common.documentSubType],
   issuer: [0, 2, 3],
   name: [0, 5, 39, common.parseName],
-  documentNumber: [1, 0, 9],
+  documentNumber: [1, 0, 9, documentNumber],
   documentNumberCheck: [1, 9, 1, common.checkDigit([1, 0, 9]), false],
   nationality: [1, 10, 3],
   birthday: [1, 13, 6, common.parseDate],

@@ -115,7 +115,7 @@ function documentNumber(opt) {
       throw 'Invalid check digit for document number'
     }
 
-    return value
+    return replaceFiller(value, ' ').trim()
   }
 
 }
