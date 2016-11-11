@@ -4,11 +4,14 @@ var common = require('./common')
 var td1Parser = require('./td1')
 var td2Parser = require('./td2')
 var td3Parser = require('./td3')
+var mrvParser = require('./visa')
 
 var parsers = {
   td1: td1Parser,
   td2: td2Parser,
   td3: td3Parser,
+  mrva: mrvParser.a,
+  mrvb: mrvParser.b
 }
 
 function simpleValidate(data) {
@@ -38,6 +41,12 @@ function getType(data) {
 
   if (lineCount == 3 && len == 30) {
     return 'td1'
+  }
+  else if (lineCount == 2 && len == 36 && lines[0][0] == 'V') {
+    return 'mrvb'
+  }
+  else if (lineCount == 2 && len == 44 && lines[0][0] == 'V') {
+    return 'mrva'
   }
   else if (lineCount == 2 && len == 36) {
     return 'td2'
