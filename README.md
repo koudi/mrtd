@@ -2,7 +2,7 @@
 
 This library provides parser for machine readable zones on various types of
 travel documents (passports, visas, idcards) as specified by 
-[http://www.icao.int/publications/pages/publication.aspx?docnum=9303](ICAO Doc 9303).
+(ICAO Doc 9303)[http://www.icao.int/publications/pages/publication.aspx?docnum=9303].
 
 ## Installation
 
